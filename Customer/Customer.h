@@ -6,6 +6,11 @@
 #define MANLIB_CUSTOMER_H
 #include <iostream>
 #include <set>
+#include <list>
+#include <map>
+#include <fstream>
+#include "../Book/Book.h"
+//#include "../Library/Library.h"
 
 class Customer {
 public:
