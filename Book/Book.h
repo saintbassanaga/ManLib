@@ -16,13 +16,13 @@ private:
     std::string mAuthor, mTitle;
 
 public:
-    Book(std::string author, std::string title);
+    [[maybe_unused]] Book(std::string author, std::string title);
 
     Book();
 
-    void read(std::ifstream &inStream);
+    [[maybe_unused]] void read(std::ifstream &inStream);
 
-    void write(std::ofstream &outStream) const;
+    [[maybe_unused]] void write(std::ofstream &outStream) const;
 
     [[nodiscard]] int bookId() const { return mBookId; }
 
@@ -44,7 +44,7 @@ public:
 
     int customerId() const { return mCustomerId; }
 
-    static int MaxBookId;
+    [[maybe_unused]] static int MaxBookId;
 
 };
 
