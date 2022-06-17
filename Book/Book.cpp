@@ -54,3 +54,17 @@ Book::Book() = default;
     }
 }
 
+void Book::borrowBook(int customerId) {
+    mBorrowed = true;
+    mCustomerId = customerId;
+}
+
+unsigned int Book::reserveBook(int customerId) {
+    mReservationList.push_back(customerId);
+    return mReservationList.size();
+}
+
+void Book::returnBook(int customerId) {
+    mBorrowed = false;
+}
+
