@@ -85,6 +85,7 @@ std::ostream &operator<<(std::ostream& outStream, const Book& book){
             outStream<<(first ? " " : ",")<<Library::sCustomerMap[customerId].name();
             first= false;
         }
+        outStream<<" . ";
     }
     return outStream;
 }
