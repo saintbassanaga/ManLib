@@ -38,14 +38,15 @@ public:
 
     void reserveBook(int customerId);
 
-    void unreserveBook(int customerId);
+    [[maybe_unused]] void unreserveBook(int customerId);
 
     [[nodiscard]] bool borrowed() const { return mBorrowed; }
 
-    int customerId() const { return mCustomerId; }
+    [[nodiscard]] int customerId() const { return mCustomerId; }
 
     [[maybe_unused]] static int MaxBookId;
 
+   friend std::ostream& operator<<(std::ostream& outStream, const Book& book);
 };
 
 

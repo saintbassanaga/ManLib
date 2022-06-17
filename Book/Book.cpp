@@ -68,3 +68,23 @@ void Book::returnBook(int customerId) {
     mBorrowed = false;
 }
 
+[[maybe_unused]] void Book::unreserveBook(int customerId) {
+    mReservationList.remove(customerId);
+}
+
+std::ostream &operator<<(std::ostream& outStream, const Book& book){
+    outStream<<" "<<book.mTitle<<" By " <<book.mAuthor;
+    if (book.borrowed()){
+        outStream<<std::endl<<" Borrowed by: "
+                            <<Library::sCustomerMap[book.mCustomerId].name();
+    }
+    if (!book.mReservationList.empty()){
+        outStream<<std::endl<<"Reserved by : ";
+        bool  first = true;
+        for (int customerId : book.mReservationList) {
+            outStream<<(first ? " " : ",")<<Library::sCustomerMap[customerId].name();
+            first= false;
+        }
+    }
+    return outStream;
+}
