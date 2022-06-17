@@ -20,7 +20,7 @@ public:
 
     Book();
 
-    void read(std::ifstream &insTream);
+    void read(std::ifstream &inStream);
 
     void write(std::ofstream &outStream) const;
 
