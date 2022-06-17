@@ -36,7 +36,7 @@ public:
 
     void returnBook(int customerId);
 
-    void reserveBook(int customerId);
+    unsigned int reserveBook(int customerId);
 
     [[maybe_unused]] void unreserveBook(int customerId);
 
