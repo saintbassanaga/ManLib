@@ -63,4 +63,5 @@ Library::Library() {
         }
         std::cout<<std::endl;
     }
+    save();
 }
