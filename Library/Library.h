@@ -28,31 +28,31 @@ private:
 
     static bool lookUpCustomer(const std::string &name, const std::string &address, Customer *customerPtr = nullptr);
 
-    void addBook();
+    static void addBook();
 
-    void deleteBook();
+    static void deleteBook();
 
-    void listBook();
+    static void listBook();
 
-    void addCustomer();
+    static void addCustomer();
 
-    void deleteCustomer();
+    [[maybe_unused]] static void deleteCustomer();
 
-    void listCustomer();
+    static void listCustomer();
 
-    void borrowBook();
+    static void borrowBook();
 
-    void reservedBook();
+    static void reservedBook();
 
-    void returnBook();
+    static void returnBook();
 
-    void load();
+    static void load();
 
-    void save();
+    static void save();
 
 public:
-    static map<int, Book> sBookMap;
-    static map<int, Customer> sCustomerMap;
+    static std::map<int, Book> sBookMap;
+    static std::map<int, Customer> sCustomerMap;
 
 };
 

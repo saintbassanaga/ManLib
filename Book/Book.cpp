@@ -67,7 +67,7 @@ unsigned int Book::reserveBook(int customerId) {
     return mReservationList.size();
 }
 
-void Book::returnBook(int customerId) {
+void Book::returnBook() {
     mBorrowed = false;
 }
 

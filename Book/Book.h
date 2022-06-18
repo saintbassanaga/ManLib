@@ -34,7 +34,7 @@ public:
 
     void borrowBook(int customerId);
 
-    void returnBook(int customerId);
+    void returnBook( /**int customerId**/);
 
     unsigned int reserveBook(int customerId);
 

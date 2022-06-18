@@ -99,3 +99,7 @@ std::ostream &operator<<(std::ostream &outStream, const Customer &customer) {
     }
     return outStream;
 }
+
+void Customer::reserveBook(int bookId) {
+    mReservationSet.insert(bookId);
+}

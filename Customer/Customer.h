@@ -31,13 +31,13 @@ public:
 
     void unreserveBook(int bookId);
 
-    bool hasBorrowed() const { return !mLoanSet.empty(); }
+    [[nodiscard]] bool hasBorrowed() const { return !mLoanSet.empty(); }
 
-    const std::string &name() const { return mName; }
+    [[nodiscard]] const std::string &name() const { return mName; }
 
-    const std::string &address() const { return mAddress; }
+    [[nodiscard]] const std::string &address() const { return mAddress; }
 
-    int Id() const { return mCustomerId; }
+    [[nodiscard]] int Id() const { return mCustomerId; }
 
     static int MaxCustomerId;
 
