@@ -3,6 +3,8 @@
 //
 
 #include "Book.h"
+#include "../Customer/Customer.h"
+#include "../Library/Library.h"
 #include <utility>
 #include <fstream>
 
