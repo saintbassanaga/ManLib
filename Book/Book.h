@@ -46,7 +46,7 @@ public:
 
     [[maybe_unused]] static int MaxBookId;
 
-   friend std::ostream& operator<<(std::ostream& outStream, const Book& book);
+    friend std::ostream &operator<<(std::ostream &outStream, const Book &book);
 };
 
 

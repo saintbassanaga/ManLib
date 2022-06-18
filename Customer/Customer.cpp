@@ -51,16 +51,16 @@ void Customer::write(std::ofstream &outStream) const {
 
     {
         unsigned int loanSetSize = mLoanSet.size();
-        outStream.write((char*) &loanSetSize , sizeof loanSetSize);
-        for (int bookId:mLoanSet) {
-            outStream.write((char*) &bookId , sizeof bookId);
+        outStream.write((char *) &loanSetSize, sizeof loanSetSize);
+        for (int bookId: mLoanSet) {
+            outStream.write((char *) &bookId, sizeof bookId);
         }
     }
     {
         unsigned int reservationListSize = mReservationSet.size();
-        outStream.write((char*) &reservationListSize, sizeof reservationListSize);
-        for (int bookId:mReservationSet) {
-            outStream.write((char*) &bookId, sizeof bookId);
+        outStream.write((char *) &reservationListSize, sizeof reservationListSize);
+        for (int bookId: mReservationSet) {
+            outStream.write((char *) &bookId, sizeof bookId);
         }
     }
 }
@@ -77,21 +77,21 @@ void Customer::unreserveBook(int bookId) {
     mReservationSet.erase(bookId);
 }
 
-std::ostream& operator<<(std::ostream& outStream, const Customer& customer){
-    outStream << customer.mCustomerId << ". " << customer.mAddress<< ", " << customer.mAddress << ".";
+std::ostream &operator<<(std::ostream &outStream, const Customer &customer) {
+    outStream << customer.mCustomerId << ". " << customer.mAddress << ", " << customer.mAddress << ".";
     if (!customer.mLoanSet.empty()) {
         outStream << std::endl << " Borrowed books: ";
         bool first = true;
-        for (int bookId : customer.mLoanSet) {
+        for (int bookId: customer.mLoanSet) {
             outStream << (first ? " " : ",")
                       << Library::sBookMap[bookId].author();
             first = false;
         }
     }
     if (!customer.mReservationSet.empty()) {
-        outStream <<std::endl << " Reserved books: ";
+        outStream << std::endl << " Reserved books: ";
         bool first = true;
-        for (int bookId : customer.mReservationSet) {
+        for (int bookId: customer.mReservationSet) {
             outStream << (first ? "" : ",")
                       << Library::sBookMap[bookId].title();
             first = false;

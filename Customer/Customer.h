@@ -4,6 +4,7 @@
 
 #ifndef MANLIB_CUSTOMER_H
 #define MANLIB_CUSTOMER_H
+
 #include <iostream>
 #include <set>
 #include <list>
@@ -15,24 +16,32 @@
 class Customer {
 public:
     Customer();
-    Customer(std::string  name, std::string  address);
 
-    void read(std::ifstream& inStream);
-    void write(std::ofstream& outStream) const;
+    Customer(std::string name, std::string address);
+
+    void read(std::ifstream &inStream);
+
+    void write(std::ofstream &outStream) const;
 
     void borrowBook(int bookId);
+
     void reserveBook(int bookId);
+
     void returnBook(int bookId);
+
     void unreserveBook(int bookId);
 
-    bool hasBorrowed() const { return !mLoanSet.empty();}
+    bool hasBorrowed() const { return !mLoanSet.empty(); }
 
-    const std::string& name() const {return mName;}
-    const std::string& address() const { return mAddress;}
-    int Id() const { return mCustomerId;}
+    const std::string &name() const { return mName; }
+
+    const std::string &address() const { return mAddress; }
+
+    int Id() const { return mCustomerId; }
 
     static int MaxCustomerId;
-    friend std::ostream& operator<<(std::ostream& outStream , const Customer& customer);
+
+    friend std::ostream &operator<<(std::ostream &outStream, const Customer &customer);
 
 private:
     int mCustomerId{};

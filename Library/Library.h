@@ -24,9 +24,9 @@ public:
 private:
     [[maybe_unused]] static std::string sBinaryPath;
 
-    lookUpBook(const std::string &author, const std::string &title, Book *bookPtr = nullptr);
+    static bool lookUpBook(const std::string &author, const std::string &title, Book *bookPtr = nullptr);
 
-    lookUpBook(const std::string &name, const std::string &address, Customer *customerPtr = nullptr);
+    static bool lookUpCustomer(const std::string &name, const std::string &address, Customer *customerPtr = nullptr);
 
     void addBook();
 
