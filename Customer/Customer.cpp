@@ -1,9 +1,7 @@
 //
 // Created by gcode on 6/17/22.
 //
-
 #include "Customer.h"
-#include "../Book/Book.h"
 #include "../Library/Library.h"
 
 #include <utility>
